@@ -29,6 +29,7 @@ namespace ERP_Project.Controllers
             obj.RoleId = "2";
             db.AspNetUserRoles.Add(obj);
             db.SaveChanges();
+
             MailMessage mail = new MailMessage();
             mail.To.Add(db.Students.Find(id).AspNetUser.Email);
             mail.From = new MailAddress("hopeorganization23@gmail.com");
@@ -53,6 +54,7 @@ namespace ERP_Project.Controllers
             student.IsAccepted = false;
 
             db.SaveChanges();
+
             MailMessage mail = new MailMessage();
             mail.To.Add(student.AspNetUser.Email);
             mail.From = new MailAddress("hopeorganization23@gmail.com");
